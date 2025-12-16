@@ -1,0 +1,946 @@
+/* HR Container */
+.hr-container {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.hr-content {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    gap: 0;
+}
+
+/* Sidebar Navigation */
+.hr-sidebar {
+    width: 260px;
+    background-color: var(--card-background);
+    border-right: var(--border-width) solid var(--border-color);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.hr-sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.hr-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hr-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.hr-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.hr-nav-item.hr-nav-active {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Main Content Area */
+.hr-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    max-width: calc(100vw - 260px);
+}
+
+/* Section Styles */
+.hr-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hr-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.hr-section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.hr-section-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.hr-subsection-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+/* Buttons */
+.hr-btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hr-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.hr-btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hr-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.hr-btn-success {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-green);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hr-btn-success:hover {
+    opacity: 0.9;
+}
+
+.hr-btn-danger {
+    padding: 0.5rem 1rem;
+    background-color: #ef4444;
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hr-btn-danger:hover {
+    opacity: 0.9;
+}
+
+.hr-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hr-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+.hr-action-btn-danger:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.hr-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Toolbar */
+.hr-section-toolbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.hr-search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+}
+
+.hr-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.hr-search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Table Styles */
+.hr-table-container {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.hr-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hr-table thead {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.hr-table th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.hr-table td {
+    padding: 1rem;
+    border-bottom: var(--border-width) solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.hr-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.hr-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.hr-table-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Status Badges */
+.hr-status-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.hr-status-active {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+}
+
+.hr-status-on-leave {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: var(--accent-orange);
+}
+
+.hr-status-pending {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: var(--accent-orange);
+}
+
+.hr-status-approved {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent-green);
+}
+
+.hr-status-closed {
+    background-color: rgba(156, 163, 175, 0.2);
+    color: var(--text-secondary);
+}
+
+.hr-status-in-progress {
+    background-color: rgba(6, 182, 212, 0.2);
+    color: var(--accent-cyan);
+}
+
+/* Stats Grid */
+.hr-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.hr-stat-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.hr-stat-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.hr-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Benefits Grid */
+.hr-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.hr-benefit-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.hr-benefit-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.hr-benefit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hr-benefit-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.hr-benefit-type {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--primary-color);
+    border-radius: 6px;
+}
+
+.hr-benefit-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hr-benefit-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr-benefit-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.hr-benefit-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-benefit-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Onboarding Styles */
+.hr-onboarding-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.hr-onboarding-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-onboarding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hr-onboarding-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.25rem 0;
+}
+
+.hr-onboarding-position {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.hr-onboarding-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-onboarding-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr-onboarding-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.hr-onboarding-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-onboarding-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hr-onboarding-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr-onboarding-progress-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.hr-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.hr-progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.hr-onboarding-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Recruitment Styles */
+.hr-recruitment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.hr-recruitment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-job-list,
+.hr-candidate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-job-card,
+.hr-candidate-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.hr-job-card:hover,
+.hr-candidate-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hr-job-header,
+.hr-candidate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hr-job-title,
+.hr-candidate-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.25rem 0;
+}
+
+.hr-job-department,
+.hr-candidate-position {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.hr-job-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hr-job-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hr-job-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.hr-job-stat-value {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-candidate-stage {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.hr-candidate-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.hr-candidate-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-job-actions,
+.hr-candidate-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Absence Management Styles */
+.hr-absence-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hr-leave-balances {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-balance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.hr-balance-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.hr-balance-type {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+.hr-balance-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hr-balance-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr-balance-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.hr-balance-value {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-balance-remaining {
+    color: var(--accent-green);
+}
+
+.hr-absence-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-absence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-absence-card {
+    background-color: var(--card-background);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-absence-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hr-absence-employee {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 0.25rem 0;
+}
+
+.hr-absence-type {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.hr-absence-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hr-absence-detail {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.hr-absence-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.hr-absence-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hr-absence-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Modal Styles */
+.hr-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.hr-modal {
+    width: 100%;
+    max-width: 720px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+    padding: 1.75rem 1.75rem 1.5rem;
+}
+
+.hr-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.hr-modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.hr-modal-close {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hr-modal-close:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-color);
+}
+
+.hr-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hr-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.hr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.hr-field-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.hr-field-input {
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    border: var(--border-width) solid var(--border-color);
+    background-color: rgba(15, 23, 42, 0.8);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.hr-field-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.6);
+    background-color: rgba(15, 23, 42, 1);
+}
+
+.hr-field-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.hr-modal-error {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.hr-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hr-recruitment-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hr-sidebar {
+        width: 220px;
+    }
+
+    .hr-main {
+        max-width: calc(100vw - 220px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hr-content {
+        flex-direction: column;
+    }
+
+    .hr-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--border-color);
+        padding: 1rem;
+    }
+
+    .hr-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0.5rem;
+    }
+
+    .hr-nav-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .hr-main {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .hr-section-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hr-benefits-grid,
+    .hr-onboarding-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hr-table-container {
+        overflow-x: auto;
+    }
+
+    .hr-modal {
+        max-width: 100%;
+        margin: 0 1rem;
+        padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .hr-modal-grid {
+        grid-template-columns: 1fr;
+    }
+}
